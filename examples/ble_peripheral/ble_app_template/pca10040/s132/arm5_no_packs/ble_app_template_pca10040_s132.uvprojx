@@ -5,15 +5,20 @@
 
   <Header>### uVision Project, (C) Keil Software</Header>
 
-  <Targets>    <Target>
+  <Targets>
+    <Target>
       <TargetName>nrf52832_xxaa</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
-        <TargetCommonOption>          <Device>nRF52832_xxAA</Device>
+        <TargetCommonOption>
+          <Device>nRF52832_xxAA</Device>
           <Vendor>Nordic Semiconductor</Vendor>
           <PackID>NordicSemiconductor.nRF_DeviceFamilyPack.8.14.1</PackID>
-          <PackURL>http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/</PackURL>          <Cpu>IROM(0x00000000,0x80000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(64000000) ELITTLE</Cpu>
+          <PackURL>http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/</PackURL>
+          <Cpu>IROM(0x00000000,0x80000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(64000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
           <FlashDriverDll></FlashDriverDll>
@@ -121,46 +126,6 @@
             <HexOffset>0</HexOffset>
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
-          <Simulator>
-            <UseSimulator>0</UseSimulator>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>1</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
-            <RestoreSysVw>1</RestoreSysVw>
-          </Simulator>
-          <Target>
-            <UseTarget>1</UseTarget>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>0</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <RestoreTracepoints>0</RestoreTracepoints>
-            <RestoreSysVw>1</RestoreSysVw>            <UsePdscDebugDescription>1</UsePdscDebugDescription>          </Target>
-          <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>-1</TargetSelection>
-          <SimDlls>
-            <CpuDll></CpuDll>
-            <CpuDllArguments></CpuDllArguments>
-            <PeripheralDll></PeripheralDll>
-            <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile></InitializationFile>
-          </SimDlls>
-          <TargetDlls>
-            <CpuDll></CpuDll>
-            <CpuDllArguments></CpuDllArguments>
-            <PeripheralDll></PeripheralDll>
-            <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile></InitializationFile>
-            <Driver>Segger\JL2CM3.dll</Driver>
-          </TargetDlls>
         </DebugOption>
         <Utilities>
           <Flash1>
@@ -175,6 +140,10 @@
           <Flash2>Segger\JL2CM3.dll</Flash2>
           <Flash3></Flash3>
           <Flash4></Flash4>
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
+          <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
           <ArmAdsMisc>
@@ -360,9 +329,12 @@
             <v6LangP>0</v6LangP>
             <vShortEn>0</vShortEn>
             <vShortWch>0</vShortWch>
+            <v6Lto>0</v6Lto>
+            <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>--reduce_paths</MiscControls>
-              <Define> BOARD_PCA10040 CONFIG_GPIO_AS_PINRESET NRF52 NRF52832_XXAA NRF52_PAN_74 NRF_SD_BLE_API_VERSION=5 S132 SOFTDEVICE_PRESENT SWI_DISABLE0</Define>
+              <Define>BOARD_PCA10040 CONFIG_GPIO_AS_PINRESET NRF52 NRF52832_XXAA NRF52_PAN_74 NRF_SD_BLE_API_VERSION=5 S132 SOFTDEVICE_PRESENT SWI_DISABLE0</Define>
               <Undefine></Undefine>
               <IncludePath>..\..\..\config;..\..\..\..\..\..\components;..\..\..\..\..\..\components\ble\ble_advertising;..\..\..\..\..\..\components\ble\ble_dtm;..\..\..\..\..\..\components\ble\ble_racp;..\..\..\..\..\..\components\ble\ble_services\ble_ancs_c;..\..\..\..\..\..\components\ble\ble_services\ble_ans_c;..\..\..\..\..\..\components\ble\ble_services\ble_bas;..\..\..\..\..\..\components\ble\ble_services\ble_bas_c;..\..\..\..\..\..\components\ble\ble_services\ble_cscs;..\..\..\..\..\..\components\ble\ble_services\ble_cts_c;..\..\..\..\..\..\components\ble\ble_services\ble_dfu;..\..\..\..\..\..\components\ble\ble_services\ble_dis;..\..\..\..\..\..\components\ble\ble_services\ble_gls;..\..\..\..\..\..\components\ble\ble_services\ble_hids;..\..\..\..\..\..\components\ble\ble_services\ble_hrs;..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c;..\..\..\..\..\..\components\ble\ble_services\ble_hts;..\..\..\..\..\..\components\ble\ble_services\ble_ias;..\..\..\..\..\..\components\ble\ble_services\ble_ias_c;..\..\..\..\..\..\components\ble\ble_services\ble_lbs;..\..\..\..\..\..\components\ble\ble_services\ble_lbs_c;..\..\..\..\..\..\components\ble\ble_services\ble_lls;..\..\..\..\..\..\components\ble\ble_services\ble_nus;..\..\..\..\..\..\components\ble\ble_services\ble_nus_c;..\..\..\..\..\..\components\ble\ble_services\ble_rscs;..\..\..\..\..\..\components\ble\ble_services\ble_rscs_c;..\..\..\..\..\..\components\ble\ble_services\ble_tps;..\..\..\..\..\..\components\ble\common;..\..\..\..\..\..\components\ble\nrf_ble_gatt;..\..\..\..\..\..\components\ble\nrf_ble_qwr;..\..\..\..\..\..\components\ble\peer_manager;..\..\..\..\..\..\components\boards;..\..\..\..\..\..\components\drivers_nrf\clock;..\..\..\..\..\..\components\drivers_nrf\common;..\..\..\..\..\..\components\drivers_nrf\comp;..\..\..\..\..\..\components\drivers_nrf\delay;..\..\..\..\..\..\components\drivers_nrf\gpiote;..\..\..\..\..\..\components\drivers_nrf\hal;..\..\..\..\..\..\components\drivers_nrf\i2s;..\..\..\..\..\..\components\drivers_nrf\lpcomp;..\..\..\..\..\..\components\drivers_nrf\pdm;..\..\..\..\..\..\components\drivers_nrf\power;..\..\..\..\..\..\components\drivers_nrf\ppi;..\..\..\..\..\..\components\drivers_nrf\pwm;..\..\..\..\..\..\components\drivers_nrf\qdec;..\..\..\..\..\..\components\drivers_nrf\rng;..\..\..\..\..\..\components\drivers_nrf\rtc;..\..\..\..\..\..\components\drivers_nrf\saadc;..\..\..\..\..\..\components\drivers_nrf\spi_master;..\..\..\..\..\..\components\drivers_nrf\spi_slave;..\..\..\..\..\..\components\drivers_nrf\swi;..\..\..\..\..\..\components\drivers_nrf\timer;..\..\..\..\..\..\components\drivers_nrf\twi_master;..\..\..\..\..\..\components\drivers_nrf\twis_slave;..\..\..\..\..\..\components\drivers_nrf\uart;..\..\..\..\..\..\components\drivers_nrf\usbd;..\..\..\..\..\..\components\drivers_nrf\wdt;..\..\..\..\..\..\components\libraries\atomic;..\..\..\..\..\..\components\libraries\atomic_fifo;..\..\..\..\..\..\components\libraries\balloc;..\..\..\..\..\..\components\libraries\bsp;..\..\..\..\..\..\components\libraries\button;..\..\..\..\..\..\components\libraries\crc16;..\..\..\..\..\..\components\libraries\crc32;..\..\..\..\..\..\components\libraries\csense;..\..\..\..\..\..\components\libraries\csense_drv;..\..\..\..\..\..\components\libraries\ecc;..\..\..\..\..\..\components\libraries\experimental_cli;..\..\..\..\..\..\components\libraries\experimental_log;..\..\..\..\..\..\components\libraries\experimental_log\src;..\..\..\..\..\..\components\libraries\experimental_memobj;..\..\..\..\..\..\components\libraries\experimental_section_vars;..\..\..\..\..\..\components\libraries\fds;..\..\..\..\..\..\components\libraries\fstorage;..\..\..\..\..\..\components\libraries\gpiote;..\..\..\..\..\..\components\libraries\hardfault;..\..\..\..\..\..\components\libraries\hci;..\..\..\..\..\..\components\libraries\led_softblink;..\..\..\..\..\..\components\libraries\low_power_pwm;..\..\..\..\..\..\components\libraries\mem_manager;..\..\..\..\..\..\components\libraries\mutex;..\..\..\..\..\..\components\libraries\pwm;..\..\..\..\..\..\components\libraries\pwr_mgmt;..\..\..\..\..\..\components\libraries\queue;..\..\..\..\..\..\components\libraries\scheduler;..\..\..\..\..\..\components\libraries\sensorsim;..\..\..\..\..\..\components\libraries\slip;..\..\..\..\..\..\components\libraries\strerror;..\..\..\..\..\..\components\libraries\timer;..\..\..\..\..\..\components\libraries\twi;..\..\..\..\..\..\components\libraries\uart;..\..\..\..\..\..\components\libraries\usbd;..\..\..\..\..\..\components\libraries\usbd\class\audio;..\..\..\..\..\..\components\libraries\usbd\class\cdc;..\..\..\..\..\..\components\libraries\usbd\class\cdc\acm;..\..\..\..\..\..\components\libraries\usbd\class\hid;..\..\..\..\..\..\components\libraries\usbd\class\hid\generic;..\..\..\..\..\..\components\libraries\usbd\class\hid\kbd;..\..\..\..\..\..\components\libraries\usbd\class\hid\mouse;..\..\..\..\..\..\components\libraries\usbd\class\msc;..\..\..\..\..\..\components\libraries\usbd\config;..\..\..\..\..\..\components\libraries\util;..\..\..\..\..\..\components\softdevice\common;..\..\..\..\..\..\components\softdevice\s132\headers;..\..\..\..\..\..\components\softdevice\s132\headers\nrf52;..\..\..\..\..\..\components\toolchain;..\..\..\..\..\..\external\fprintf;..\..\..\..\..\..\external\segger_rtt;..\config</IncludePath>
             </VariousControls>
@@ -377,6 +349,7 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
+            <uClangAs>0</uClangAs>
             <VariousControls>
               <MiscControls> --cpreproc_opts=-DBOARD_PCA10040,-DCONFIG_GPIO_AS_PINRESET,-DNRF52,-DNRF52832_XXAA,-DNRF52_PAN_74,-DNRF_SD_BLE_API_VERSION=5,-DS132,-DSOFTDEVICE_PRESENT,-DSWI_DISABLE0</MiscControls>
               <Define> BOARD_PCA10040 CONFIG_GPIO_AS_PINRESET NRF52 NRF52832_XXAA NRF52_PAN_74 NRF_SD_BLE_API_VERSION=5 S132 SOFTDEVICE_PRESENT SWI_DISABLE0</Define>
@@ -403,21 +376,30 @@
           </LDads>
         </TargetArmAds>
       </TargetOption>
-      <Groups>        <Group>
+      <Groups>
+        <Group>
           <GroupName>Application</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\main.c</FilePath>            </File>            <File>
+              <FilePath>..\..\..\main.c</FilePath>
+            </File>
+            <File>
               <FileName>sdk_config.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\config\sdk_config.h</FilePath>            </File>          </Files>
-        </Group>        <Group>
+              <FilePath>..\config\sdk_config.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Board Definition</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>boards.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\boards\boards.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\boards\boards.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -449,6 +431,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -457,13 +448,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Board Support</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>bsp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -495,6 +491,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -503,10 +508,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>bsp_btn_ble.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp_btn_ble.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp_btn_ble.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -538,6 +546,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -546,10 +563,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>bsp_nfc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp_nfc.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp_nfc.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -581,6 +601,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -589,13 +618,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_BLE</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>ble_advdata.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\common\ble_advdata.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\common\ble_advdata.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -627,6 +661,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -635,10 +678,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>ble_advertising.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\ble_advertising\ble_advertising.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\ble_advertising\ble_advertising.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -670,6 +716,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -678,10 +733,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>ble_conn_params.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\common\ble_conn_params.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\common\ble_conn_params.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -713,6 +771,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -721,10 +788,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>ble_conn_state.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\common\ble_conn_state.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\common\ble_conn_state.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -756,6 +826,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -764,10 +843,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>ble_srv_common.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\common\ble_srv_common.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\common\ble_srv_common.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -799,6 +881,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -807,10 +898,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>gatt_cache_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\gatt_cache_manager.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\gatt_cache_manager.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -842,6 +936,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -850,10 +953,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>gatts_cache_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\gatts_cache_manager.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\gatts_cache_manager.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -885,6 +991,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -893,10 +1008,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>id_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\id_manager.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\id_manager.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -928,6 +1046,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -936,10 +1063,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_ble_gatt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\nrf_ble_gatt\nrf_ble_gatt.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\nrf_ble_gatt\nrf_ble_gatt.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -971,6 +1101,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -979,10 +1118,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>peer_data_storage.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_data_storage.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_data_storage.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1014,6 +1156,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1022,10 +1173,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>peer_database.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_database.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_database.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1057,6 +1211,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1065,10 +1228,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>peer_id.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_id.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_id.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1100,6 +1266,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1108,10 +1283,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>peer_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_manager.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_manager.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1143,6 +1321,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1151,10 +1338,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>pm_buffer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\pm_buffer.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\pm_buffer.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1186,6 +1376,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1194,10 +1393,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>pm_mutex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\pm_mutex.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\pm_mutex.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1229,6 +1431,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1237,10 +1448,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>security_dispatcher.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\security_dispatcher.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\security_dispatcher.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1272,6 +1486,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1280,10 +1503,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>security_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\security_manager.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\security_manager.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1315,6 +1541,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1323,13 +1558,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_Drivers</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>nrf_drv_clock.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\drivers_nrf\clock\nrf_drv_clock.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\drivers_nrf\clock\nrf_drv_clock.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1361,6 +1601,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1369,10 +1618,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_drv_common.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1404,6 +1656,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1412,10 +1673,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_drv_gpiote.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1447,6 +1711,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1455,10 +1728,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_drv_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1490,6 +1766,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1498,13 +1783,28 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>ble_bas.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\components\ble\ble_services\ble_bas\ble_bas.c</FilePath>
+            </File>
+            <File>
+              <FileName>ble_hts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\components\ble\ble_services\ble_hts\ble_hts.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_Libraries</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>app_button.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\button\app_button.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\button\app_button.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1536,6 +1836,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1544,10 +1853,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>app_error.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\util\app_error.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\util\app_error.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1579,6 +1891,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1587,10 +1908,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>app_error_weak.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\util\app_error_weak.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\util\app_error_weak.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1622,6 +1946,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1630,10 +1963,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>app_scheduler.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\scheduler\app_scheduler.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\scheduler\app_scheduler.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1665,6 +2001,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1673,10 +2018,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>app_timer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\timer\app_timer.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\timer\app_timer.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1708,6 +2056,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1716,10 +2073,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>app_util_platform.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\util\app_util_platform.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\util\app_util_platform.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1751,6 +2111,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1759,10 +2128,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>crc16.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\crc16\crc16.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\crc16\crc16.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1794,6 +2166,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1802,10 +2183,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>fds.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\fds\fds.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\fds\fds.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1837,6 +2221,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1845,10 +2238,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>hardfault_implementation.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\hardfault\hardfault_implementation.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\hardfault\hardfault_implementation.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1880,6 +2276,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1888,10 +2293,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_assert.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\util\nrf_assert.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\util\nrf_assert.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1923,6 +2331,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1931,10 +2348,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_atfifo.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\atomic_fifo\nrf_atfifo.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\atomic_fifo\nrf_atfifo.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -1966,6 +2386,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -1974,10 +2403,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_balloc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\balloc\nrf_balloc.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\balloc\nrf_balloc.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2009,6 +2441,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2017,10 +2458,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_fprintf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\external\fprintf\nrf_fprintf.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\external\fprintf\nrf_fprintf.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2052,6 +2496,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2060,10 +2513,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_fprintf_format.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\external\fprintf\nrf_fprintf_format.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\external\fprintf\nrf_fprintf_format.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2095,6 +2551,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2103,10 +2568,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_fstorage.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\fstorage\nrf_fstorage.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\fstorage\nrf_fstorage.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2138,6 +2606,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2146,10 +2623,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_fstorage_sd.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\fstorage\nrf_fstorage_sd.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\fstorage\nrf_fstorage_sd.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2181,6 +2661,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2189,10 +2678,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_memobj.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_memobj\nrf_memobj.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_memobj\nrf_memobj.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2224,6 +2716,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2232,10 +2733,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_pwr_mgmt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2267,6 +2771,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2275,10 +2788,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_section_iter.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_section_vars\nrf_section_iter.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_section_vars\nrf_section_iter.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2310,6 +2826,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2318,10 +2843,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_strerror.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\strerror\nrf_strerror.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\strerror\nrf_strerror.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2353,6 +2881,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2361,10 +2898,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>sdk_mapped_flags.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\util\sdk_mapped_flags.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\util\sdk_mapped_flags.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2396,6 +2936,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2404,10 +2953,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>sensorsim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\sensorsim\sensorsim.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\sensorsim\sensorsim.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2439,6 +2991,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2447,13 +3008,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_Log</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>nrf_log_backend_rtt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_rtt.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_rtt.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2485,6 +3051,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2493,10 +3068,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_log_backend_serial.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_serial.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_serial.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2528,6 +3106,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2536,10 +3123,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_log_backend_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_uart.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_uart.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2571,6 +3161,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2579,10 +3178,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_log_default_backends.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_default_backends.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_default_backends.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2614,6 +3216,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2622,10 +3233,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_log_frontend.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_frontend.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_frontend.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2657,6 +3271,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2665,10 +3288,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_log_str_formatter.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_str_formatter.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_str_formatter.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2700,6 +3326,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2708,13 +3343,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_Segger_RTT</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>RTT_Syscalls_KEIL.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\external\segger_rtt\RTT_Syscalls_KEIL.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\external\segger_rtt\RTT_Syscalls_KEIL.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2746,6 +3386,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2754,10 +3403,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>SEGGER_RTT.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2789,6 +3441,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2797,10 +3458,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>SEGGER_RTT_printf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2832,6 +3496,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2840,13 +3513,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_SoftDevice</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>nrf_sdh.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2878,6 +3556,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2886,10 +3573,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_sdh_ble.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh_ble.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh_ble.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2921,6 +3611,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2929,10 +3628,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_sdh_soc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh_soc.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh_soc.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -2964,6 +3666,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -2972,17 +3683,30 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>      </Groups>
-    </Target>    <Target>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
+        </Group>
+      </Groups>
+    </Target>
+    <Target>
       <TargetName>flash_s132_nrf52_5.0.0_softdevice</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <uAC6>0</uAC6>
       <TargetOption>
-        <TargetCommonOption>          <Device>nRF52832_xxAA</Device>
+        <TargetCommonOption>
+          <Device>nRF52832_xxAA</Device>
           <Vendor>Nordic Semiconductor</Vendor>
-          <PackID>..</PackID>
-          <PackURL></PackURL>          <Cpu>IROM(0x00000000,0x80000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(64000000) ELITTLE</Cpu>
+          <PackID>NordicSemiconductor.nRF_DeviceFamilyPack.8.14.1</PackID>
+          <PackURL>http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/</PackURL>
+          <Cpu>IROM(0x00000000,0x80000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(64000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
           <FlashDriverDll></FlashDriverDll>
@@ -3090,46 +3814,6 @@
             <HexOffset>0</HexOffset>
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
-          <Simulator>
-            <UseSimulator>0</UseSimulator>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>1</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
-            <RestoreSysVw>1</RestoreSysVw>
-          </Simulator>
-          <Target>
-            <UseTarget>1</UseTarget>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>0</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <RestoreTracepoints>0</RestoreTracepoints>
-            <RestoreSysVw>1</RestoreSysVw>            <UsePdscDebugDescription>1</UsePdscDebugDescription>          </Target>
-          <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>-1</TargetSelection>
-          <SimDlls>
-            <CpuDll></CpuDll>
-            <CpuDllArguments></CpuDllArguments>
-            <PeripheralDll></PeripheralDll>
-            <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile></InitializationFile>
-          </SimDlls>
-          <TargetDlls>
-            <CpuDll></CpuDll>
-            <CpuDllArguments></CpuDllArguments>
-            <PeripheralDll></PeripheralDll>
-            <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile></InitializationFile>
-            <Driver>Segger\JL2CM3.dll</Driver>
-          </TargetDlls>
         </DebugOption>
         <Utilities>
           <Flash1>
@@ -3144,6 +3828,10 @@
           <Flash2>Segger\JL2CM3.dll</Flash2>
           <Flash3></Flash3>
           <Flash4></Flash4>
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
+          <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
           <ArmAdsMisc>
@@ -3174,7 +3862,7 @@
             <AdsLsxf>1</AdsLsxf>
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
-            <AdsCpuType>""</AdsCpuType>
+            <AdsCpuType>"Cortex-M4"</AdsCpuType>
             <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
@@ -3329,6 +4017,9 @@
             <v6LangP>0</v6LangP>
             <vShortEn>0</vShortEn>
             <vShortWch>0</vShortWch>
+            <v6Lto>0</v6Lto>
+            <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>--reduce_paths</MiscControls>
               <Define></Define>
@@ -3346,6 +4037,7 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
+            <uClangAs>0</uClangAs>
             <VariousControls>
               <MiscControls> --cpreproc_opts=</MiscControls>
               <Define></Define>
@@ -3372,21 +4064,30 @@
           </LDads>
         </TargetArmAds>
       </TargetOption>
-      <Groups>        <Group>
+      <Groups>
+        <Group>
           <GroupName>Application</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\main.c</FilePath>            </File>            <File>
+              <FilePath>..\..\..\main.c</FilePath>
+            </File>
+            <File>
               <FileName>sdk_config.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\config\sdk_config.h</FilePath>            </File>          </Files>
-        </Group>        <Group>
+              <FilePath>..\config\sdk_config.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Board Definition</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>boards.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\boards\boards.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\boards\boards.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3418,6 +4119,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3426,13 +4136,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Board Support</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>bsp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3464,6 +4179,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3472,10 +4196,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>bsp_btn_ble.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp_btn_ble.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp_btn_ble.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3507,6 +4234,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3515,10 +4251,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>bsp_nfc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp_nfc.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\bsp\bsp_nfc.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3550,6 +4289,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3558,13 +4306,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_BLE</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>ble_advdata.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\common\ble_advdata.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\common\ble_advdata.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3596,6 +4349,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3604,10 +4366,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>ble_advertising.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\ble_advertising\ble_advertising.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\ble_advertising\ble_advertising.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3639,6 +4404,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3647,10 +4421,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>ble_conn_params.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\common\ble_conn_params.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\common\ble_conn_params.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3682,6 +4459,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3690,10 +4476,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>ble_conn_state.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\common\ble_conn_state.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\common\ble_conn_state.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3725,6 +4514,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3733,10 +4531,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>ble_srv_common.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\common\ble_srv_common.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\common\ble_srv_common.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3768,6 +4569,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3776,10 +4586,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>gatt_cache_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\gatt_cache_manager.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\gatt_cache_manager.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3811,6 +4624,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3819,10 +4641,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>gatts_cache_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\gatts_cache_manager.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\gatts_cache_manager.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3854,6 +4679,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3862,10 +4696,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>id_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\id_manager.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\id_manager.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3897,6 +4734,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3905,10 +4751,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_ble_gatt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\nrf_ble_gatt\nrf_ble_gatt.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\nrf_ble_gatt\nrf_ble_gatt.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3940,6 +4789,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3948,10 +4806,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>peer_data_storage.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_data_storage.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_data_storage.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -3983,6 +4844,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -3991,10 +4861,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>peer_database.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_database.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_database.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4026,6 +4899,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4034,10 +4916,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>peer_id.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_id.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_id.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4069,6 +4954,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4077,10 +4971,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>peer_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_manager.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\peer_manager.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4112,6 +5009,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4120,10 +5026,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>pm_buffer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\pm_buffer.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\pm_buffer.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4155,6 +5064,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4163,10 +5081,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>pm_mutex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\pm_mutex.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\pm_mutex.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4198,6 +5119,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4206,10 +5136,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>security_dispatcher.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\security_dispatcher.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\security_dispatcher.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4241,6 +5174,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4249,10 +5191,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>security_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\security_manager.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\ble\peer_manager\security_manager.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4284,6 +5229,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4292,13 +5246,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_Drivers</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>nrf_drv_clock.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\drivers_nrf\clock\nrf_drv_clock.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\drivers_nrf\clock\nrf_drv_clock.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4330,6 +5289,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4338,10 +5306,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_drv_common.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4373,6 +5344,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4381,10 +5361,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_drv_gpiote.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4416,6 +5399,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4424,10 +5416,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_drv_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4459,6 +5454,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4467,13 +5471,28 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>ble_bas.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\components\ble\ble_services\ble_bas\ble_bas.c</FilePath>
+            </File>
+            <File>
+              <FileName>ble_hts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\components\ble\ble_services\ble_hts\ble_hts.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_Libraries</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>app_button.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\button\app_button.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\button\app_button.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4505,6 +5524,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4513,10 +5541,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>app_error.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\util\app_error.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\util\app_error.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4548,6 +5579,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4556,10 +5596,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>app_error_weak.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\util\app_error_weak.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\util\app_error_weak.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4591,6 +5634,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4599,10 +5651,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>app_scheduler.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\scheduler\app_scheduler.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\scheduler\app_scheduler.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4634,6 +5689,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4642,10 +5706,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>app_timer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\timer\app_timer.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\timer\app_timer.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4677,6 +5744,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4685,10 +5761,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>app_util_platform.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\util\app_util_platform.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\util\app_util_platform.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4720,6 +5799,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4728,10 +5816,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>crc16.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\crc16\crc16.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\crc16\crc16.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4763,6 +5854,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4771,10 +5871,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>fds.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\fds\fds.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\fds\fds.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4806,6 +5909,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4814,10 +5926,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>hardfault_implementation.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\hardfault\hardfault_implementation.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\hardfault\hardfault_implementation.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4849,6 +5964,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4857,10 +5981,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_assert.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\util\nrf_assert.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\util\nrf_assert.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4892,6 +6019,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4900,10 +6036,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_atfifo.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\atomic_fifo\nrf_atfifo.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\atomic_fifo\nrf_atfifo.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4935,6 +6074,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4943,10 +6091,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_balloc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\balloc\nrf_balloc.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\balloc\nrf_balloc.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -4978,6 +6129,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -4986,10 +6146,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_fprintf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\external\fprintf\nrf_fprintf.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\external\fprintf\nrf_fprintf.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5021,6 +6184,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5029,10 +6201,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_fprintf_format.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\external\fprintf\nrf_fprintf_format.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\external\fprintf\nrf_fprintf_format.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5064,6 +6239,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5072,10 +6256,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_fstorage.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\fstorage\nrf_fstorage.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\fstorage\nrf_fstorage.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5107,6 +6294,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5115,10 +6311,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_fstorage_sd.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\fstorage\nrf_fstorage_sd.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\fstorage\nrf_fstorage_sd.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5150,6 +6349,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5158,10 +6366,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_memobj.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_memobj\nrf_memobj.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_memobj\nrf_memobj.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5193,6 +6404,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5201,10 +6421,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_pwr_mgmt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5236,6 +6459,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5244,10 +6476,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_section_iter.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_section_vars\nrf_section_iter.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_section_vars\nrf_section_iter.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5279,6 +6514,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5287,10 +6531,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_strerror.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\strerror\nrf_strerror.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\strerror\nrf_strerror.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5322,6 +6569,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5330,10 +6586,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>sdk_mapped_flags.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\util\sdk_mapped_flags.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\util\sdk_mapped_flags.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5365,6 +6624,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5373,10 +6641,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>sensorsim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\sensorsim\sensorsim.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\sensorsim\sensorsim.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5408,6 +6679,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5416,13 +6696,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_Log</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>nrf_log_backend_rtt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_rtt.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_rtt.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5454,6 +6739,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5462,10 +6756,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_log_backend_serial.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_serial.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_serial.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5497,6 +6794,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5505,10 +6811,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_log_backend_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_uart.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_uart.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5540,6 +6849,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5548,10 +6866,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_log_default_backends.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_default_backends.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_default_backends.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5583,6 +6904,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5591,10 +6921,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_log_frontend.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_frontend.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_frontend.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5626,6 +6959,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5634,10 +6976,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_log_str_formatter.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_str_formatter.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_str_formatter.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5669,6 +7014,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5677,13 +7031,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_Segger_RTT</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>RTT_Syscalls_KEIL.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\external\segger_rtt\RTT_Syscalls_KEIL.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\external\segger_rtt\RTT_Syscalls_KEIL.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5715,6 +7074,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5723,10 +7091,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>SEGGER_RTT.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5758,6 +7129,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5766,10 +7146,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>SEGGER_RTT_printf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5801,6 +7184,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5809,13 +7201,18 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>        <Group>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>nRF_SoftDevice</GroupName>
-          <Files>            <File>
+          <Files>
+            <File>
               <FileName>nrf_sdh.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5847,6 +7244,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5855,10 +7261,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_sdh_ble.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh_ble.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh_ble.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5890,6 +7299,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5898,10 +7316,13 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>            <File>
+              </FileOption>
+            </File>
+            <File>
               <FileName>nrf_sdh_soc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh_soc.c</FilePath>              <FileOption>
+              <FilePath>..\..\..\..\..\..\components\softdevice\common\nrf_sdh_soc.c</FilePath>
+              <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
@@ -5933,6 +7354,15 @@
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -5941,27 +7371,209 @@
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
-              </FileOption>            </File>          </Files>
-        </Group>      </Groups>
-    </Target>  </Targets><RTE>
-  <packages>
-    <filter>
-      <targetInfos/>
-    </filter>    <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0">
-      <targetInfos>        <targetInfo name="nrf52832_xxaa" versionMatchMode="fixed"/>        <targetInfo excluded="1" name="flash_s132_nrf52_5.0.0_softdevice"/>      </targetInfos>
-    </package>
-    <package name="nRF_DeviceFamilyPack" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.14.1">
-      <targetInfos>        <targetInfo name="nrf52832_xxaa" versionMatchMode="fixed"/>        <targetInfo excluded="1" name="flash_s132_nrf52_5.0.0_softdevice"/>      </targetInfos>
-    </package>  </packages>
-  <apis/>
-  <components>    <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
-      <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
-      <targetInfos>        <targetInfo name="nrf52832_xxaa" versionMatchMode="fixed"/>        <targetInfo excluded="1" name="flash_s132_nrf52_5.0.0_softdevice"/>      </targetInfos>
-    </component>
-    <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.14.1" condition="nRF5x Series CMSIS Device">
-      <package name="nRF_DeviceFamilyPack" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.14.1"/>
-      <targetInfos>        <targetInfo name="nrf52832_xxaa" versionMatchMode="fixed"/>        <targetInfo excluded="1" name="flash_s132_nrf52_5.0.0_softdevice"/>      </targetInfos>
-    </component>  </components>
-  <files>  </files>
-</RTE>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>0</IncludeInBuild>
+              <AlwaysBuild>2</AlwaysBuild>
+              <GenerateAssemblyFile>2</GenerateAssemblyFile>
+              <AssembleAssemblyFile>2</AssembleAssemblyFile>
+              <PublicsOnly>2</PublicsOnly>
+              <StopOnExitCode>11</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>1</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>2</interw>
+                <Optim>0</Optim>
+                <oTime>2</oTime>
+                <SplitLS>2</SplitLS>
+                <OneElfS>2</OneElfS>
+                <Strict>2</Strict>
+                <EnumInt>2</EnumInt>
+                <PlainCh>2</PlainCh>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <wLevel>0</wLevel>
+                <uThumb>2</uThumb>
+                <uSurpInc>2</uSurpInc>
+                <uC99>2</uC99>
+                <useXO>2</useXO>
+                <v6Lang>0</v6Lang>
+                <v6LangP>0</v6LangP>
+                <vShortEn>2</vShortEn>
+                <vShortWch>2</vShortWch>
+                <v6Lto>2</v6Lto>
+                <v6WtE>2</v6WtE>
+                <v6Rtti>2</v6Rtti>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <uClangAs>2</uClangAs>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>0</IncludeInBuild>
+              <AlwaysBuild>2</AlwaysBuild>
+              <GenerateAssemblyFile>2</GenerateAssemblyFile>
+              <AssembleAssemblyFile>2</AssembleAssemblyFile>
+              <PublicsOnly>2</PublicsOnly>
+              <StopOnExitCode>11</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>1</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>2</interw>
+                <Optim>0</Optim>
+                <oTime>2</oTime>
+                <SplitLS>2</SplitLS>
+                <OneElfS>2</OneElfS>
+                <Strict>2</Strict>
+                <EnumInt>2</EnumInt>
+                <PlainCh>2</PlainCh>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <wLevel>0</wLevel>
+                <uThumb>2</uThumb>
+                <uSurpInc>2</uSurpInc>
+                <uC99>2</uC99>
+                <useXO>2</useXO>
+                <v6Lang>0</v6Lang>
+                <v6LangP>0</v6LangP>
+                <vShortEn>2</vShortEn>
+                <vShortWch>2</vShortWch>
+                <v6Lto>2</v6Lto>
+                <v6WtE>2</v6WtE>
+                <v6Rtti>2</v6Rtti>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <uClangAs>2</uClangAs>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
+        </Group>
+      </Groups>
+    </Target>
+  </Targets>
+
+  <RTE>
+    <packages>
+      <filter>
+        <targetInfos/>
+      </filter>
+      <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0">
+        <targetInfos>
+          <targetInfo name="nrf52832_xxaa" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="nRF_DeviceFamilyPack" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.14.1">
+        <targetInfos>
+          <targetInfo name="nrf52832_xxaa" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+    </packages>
+    <apis/>
+    <components>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
+        <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
+        <targetInfos>
+          <targetInfo excluded="1" name="flash_s132_nrf52_5.0.0_softdevice"/>
+          <targetInfo name="nrf52832_xxaa" versionMatchMode="fixed"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.14.1" condition="nRF5x Series CMSIS Device">
+        <package name="nRF_DeviceFamilyPack" url="http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.14.1"/>
+        <targetInfos>
+          <targetInfo excluded="1" name="flash_s132_nrf52_5.0.0_softdevice"/>
+          <targetInfo name="nrf52832_xxaa" versionMatchMode="fixed"/>
+        </targetInfos>
+      </component>
+    </components>
+    <files>
+      <file attr="config" category="source" condition="ARM Compiler" name="Device\Source\arm\arm_startup_nrf52.s" version="8.14.1">
+        <instance index="0">RTE\Device\nRF52832_xxAA\arm_startup_nrf52.s</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.14.1" condition="nRF52832 Device and CMSIS"/>
+        <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.14.1"/>
+        <targetInfos>
+          <targetInfo excluded="1" name="flash_s132_nrf52_5.0.0_softdevice"/>
+          <targetInfo name="nrf52832_xxaa"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\Source\system_nrf52.c" version="8.14.1">
+        <instance index="0">RTE\Device\nRF52832_xxAA\system_nrf52.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.14.1" condition="nRF52832 Device and CMSIS"/>
+        <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.14.1"/>
+        <targetInfos>
+          <targetInfo excluded="1" name="flash_s132_nrf52_5.0.0_softdevice"/>
+          <targetInfo name="nrf52832_xxaa"/>
+        </targetInfos>
+      </file>
+    </files>
+  </RTE>
+
 </Project>

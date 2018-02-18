@@ -192,9 +192,14 @@ static void nus_data_handler(ble_nus_evt_t * p_evt)
         {
             while (app_uart_put('\n') == NRF_ERROR_BUSY);
         }
+				
     }
-
+		char stepCount[BLE_NUS_MAX_DATA_LEN];
+		uint16_t lengtharray = strlen(stepCount);
+		sprintf(stepCount, "The current steps are: %d\n", 1); 
+		ble_nus_string_send(&m_nus, stepCount, &lengtharray );	
 }
+
 /**@snippet [Handling the data received over BLE] */
 
 

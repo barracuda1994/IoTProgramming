@@ -80,6 +80,11 @@
 #include "nrf_log_default_backends.h"
 
 
+#include "nrf_temp.h" 
+#include "ble_hts.h" 
+#include "ble_bas.h"
+
+
 #define APP_FEATURE_NOT_SUPPORTED       BLE_GATT_STATUS_ATTERR_APP_BEGIN + 2    /**< Reply when unsupported features are requested. */
 
 #define DEVICE_NAME                     "Nordic_Template"                       /**< Name of device. Will be included in the advertising data. */
@@ -110,6 +115,19 @@
 
 #define DEAD_BEEF                       0xDEADBEEF                              /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
 
+// Determines if temperature type is given as characteristic (1) or as a field of measurement (0) 
+#define TEMP_TYPE_AS_CHARACTERISTIC 0 
+BLE_HTS_DEF(m_hts); // Macro for defining a ble_hts instance 
+BLE_BAS_DEF(m_bas); // Macro for defining a ble_bas instance 
+
+// Flag to keep track of when an indication confirmation is pending 
+static bool m_hts_meas_ind_conf_pending = false; 
+volatile uint32_t hts_counter; // hold dummy hts data 
+
+// Function declarations 
+static void on_hts_evt(ble_hts_t * p_hts, ble_hts_evt_t * p_evt); 
+static void temperature_measurement_send(void);
+static void generate_temperature(ble_hts_meas_t * p_meas);
 
 NRF_BLE_GATT_DEF(m_gatt);                                                       /**< GATT module instance. */
 BLE_ADVERTISING_DEF(m_advertising);                                             /**< Advertising module instance. */
@@ -339,6 +357,88 @@ static void on_yys_evt(ble_yy_service_t     * p_yy_service,
 }
 */
 
+
+static void temperature_measurement_send(void) 
+{ 
+	ble_hts_meas_t hts_meas; //Health Thermometer Service measurement structure 
+	ret_code_t err_code; 
+	
+	if (!m_hts_meas_ind_conf_pending) 
+	{ 
+		generate_temperature(&hts_meas); 
+		
+		err_code = ble_hts_measurement_send(&m_hts, &hts_meas); 
+		
+		switch (err_code) 
+		{ 
+			case NRF_SUCCESS: 
+				// Measurement was successfully sent, wait for confirmation. 
+				m_hts_meas_ind_conf_pending = true; 
+				break; 
+			
+			case NRF_ERROR_INVALID_STATE: 
+				// Ignore error. 
+				break; 
+				
+			default: 
+				APP_ERROR_HANDLER(err_code); 
+				break; 
+		} 
+	} 
+}
+
+/* * Function for handling the Health Thermometer Service events. */ 
+static void on_hts_evt(ble_hts_t * p_hts, ble_hts_evt_t * p_evt) 
+{ 
+	switch (p_evt->evt_type) 
+	{ 
+		case BLE_HTS_EVT_INDICATION_ENABLED: 
+			// Indication has been enabled, send a single temperature measurement 
+			temperature_measurement_send(); 
+			break; 
+			
+		case BLE_HTS_EVT_INDICATION_CONFIRMED: 
+			m_hts_meas_ind_conf_pending = false; 
+			break; 
+			
+		default: // No implementation needed. 
+		break; 
+	} 
+}
+
+/* * Function for generating a dummy temperature information packet. */
+ static void generate_temperature(ble_hts_meas_t * p_meas) 
+ {
+	 static ble_date_time_t time_stamp = { 2017, 31, 10, 16, 15, 0 }; 
+	 
+	 uint32_t celciusX100; 
+	 
+	 p_meas->temp_in_fahr_units = false; 
+	 p_meas->time_stamp_present = true; 
+	 p_meas->temp_type_present = (TEMP_TYPE_AS_CHARACTERISTIC ? false : true); 
+	 
+	 celciusX100 = 2000+hts_counter++; // one unit is 0.01 Celcius 
+	 
+	 p_meas->temp_in_celcius.exponent = -2; 
+	 p_meas->temp_in_celcius.mantissa = celciusX100; 
+	 p_meas->temp_in_fahr.exponent = -2; 
+	 p_meas->temp_in_fahr.mantissa = (32 * 100) + ((celciusX100 * 9) / 5); 
+	 p_meas->time_stamp = time_stamp; 
+	 p_meas->temp_type = BLE_HTS_TEMP_TYPE_FINGER; 
+	 
+	 // update simulated time stamp 
+	 time_stamp.seconds += 27; 
+	 if (time_stamp.seconds > 59) 
+	 { 
+		time_stamp.seconds -= 60; 
+		time_stamp.minutes++; 
+		if (time_stamp.minutes > 59) 
+		{ 
+			time_stamp.minutes = 0; 
+		} 
+	 } 
+}
+
 /**@brief Function for initializing services that will be used by the application.
  */
 static void services_init(void)
@@ -366,6 +466,45 @@ static void services_init(void)
        err_code = ble_yy_service_init(&yys_init, &yy_init);
        APP_ERROR_CHECK(err_code);
      */
+		 ret_code_t err_code; 
+		 ble_hts_init_t hts_init; 
+		 ble_bas_init_t bas_init; 
+		 
+		 // Initialize Health Thermometer Service 
+		 memset(&hts_init, 0, sizeof(hts_init)); 
+		 
+		 hts_init.evt_handler = on_hts_evt; 
+		 hts_init.temp_type_as_characteristic = TEMP_TYPE_AS_CHARACTERISTIC; 
+		 hts_init.temp_type = BLE_HTS_TEMP_TYPE_BODY; 
+		 
+		 // Here the sec level for the Health Thermometer Service can be changed/increased. 
+		 BLE_GAP_CONN_SEC_MODE_SET_ENC_NO_MITM(&hts_init.hts_meas_attr_md.cccd_write_perm); 
+		 BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(&hts_init.hts_meas_attr_md.read_perm); 
+		 BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(&hts_init.hts_meas_attr_md.write_perm); 
+		 
+		 BLE_GAP_CONN_SEC_MODE_SET_OPEN(&hts_init.hts_temp_type_attr_md.read_perm); 
+		 BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(&hts_init.hts_temp_type_attr_md.write_perm); 
+		 
+		 err_code = ble_hts_init(&m_hts, &hts_init); 
+		 APP_ERROR_CHECK(err_code); 
+		 
+		 // Initialize Battery Service. 
+		 memset(&bas_init, 0, sizeof(bas_init)); 
+		 
+		 // Here the sec level for the Battery Service can be changed/increased. 
+		 BLE_GAP_CONN_SEC_MODE_SET_OPEN(&bas_init.battery_level_char_attr_md.cccd_write_perm); 
+		 BLE_GAP_CONN_SEC_MODE_SET_OPEN(&bas_init.battery_level_char_attr_md.read_perm); 
+		 BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(&bas_init.battery_level_char_attr_md.write_perm); 
+		 
+		 BLE_GAP_CONN_SEC_MODE_SET_OPEN(&bas_init.battery_level_report_read_perm); 
+		 
+		 bas_init.evt_handler = NULL; 
+		 bas_init.support_notification = true; 
+		 bas_init.p_report_ref = NULL; 
+		 bas_init.initial_batt_level = 100; 
+		 
+		 err_code = ble_bas_init(&m_bas, &bas_init); 
+		 APP_ERROR_CHECK(err_code);
 }
 
 
@@ -686,6 +825,13 @@ static void bsp_event_handler(bsp_event_t event)
                 }
             }
             break; // BSP_EVENT_KEY_0
+						
+				case BSP_EVENT_KEY_0: 
+						if (m_conn_handle != BLE_CONN_HANDLE_INVALID) 
+						{ 
+							temperature_measurement_send();
+						} 
+						break;
 
         default:
             break;
@@ -778,6 +924,9 @@ static void advertising_start(bool erase_bonds)
 }
 
 
+
+
+ 
 /**@brief Function for application main entry.
  */
 int main(void)
